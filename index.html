@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Document</title>
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+
+</head>
+<body>
+
+
+
+  <section>
+  	<div id="user-list" class="row container">
+	 <!--  <div class="user col-sm-6 col-md-4">
+
+	  </div> -->
+	</div>
+  </section>
+</body>
+</html>
+
+<script>
+
+function getRandomArbitrary(min, max) {
+    return Math.random() * (max - min) + min;
+}
+
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
+$(document).ready(function(){
+
+   $.ajax({
+    url: 'https://randomuser.me/api/?results=20',
+    dataType: 'json',
+    success: function(data){
+
+
+    var users = data.results;
+
+    var i = 0
+	    $.each(users,function(index,user){
+          if(user.gender == "female" && i < 5 ){
+
+	        console.log(user.gender);
+		    console.log(user.name);
+
+			var avater = $('<img>').prop('src', user.picture.large);
+
+			var userDOM = $('<div>').addClass('user').addClass('col-sm-2').addClass('c');
+			userDOM.append(avater)
+
+		    $('#user-list').append(userDOM);
+
+		 //    var positionT = getRandomInt(0, 400)
+	  // var positionL = getRandomInt(0, 800)
+	  // console.log(positionT);
+	  // var user = $('.user').eq(i);
+
+	  // console.log(user);
+
+	  // user.css({top : positionT + 'px',left : positionL + 'px'});
+
+			i++
+		   }
+
+	    });
+    }
+   });
+
+
+   	$('#user-list').click(function(){
+
+
+	    for(var i = 0; i < 5; i++){
+	      var positionT = getRandomInt(0, 400)
+		  var positionL = getRandomInt(0, 800)
+		  var rotateD = getRandomInt(-360, 360)
+		  console.log(positionT);
+		  var user = $('.user').eq(i);
+
+		  console.log(user);
+
+		  user.css({top : positionT + 'px',left : positionL + 'px',transform: 'rotate' +'('+ rotateD +'deg)' });
+
+	  	}
+
+	});
+
+
+
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
