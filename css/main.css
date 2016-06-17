@@ -1,0 +1,110 @@
+.header {
+	padding: 20px;
+}
+
+.glyphicon{
+font-size: 40px;
+line-height: 500%;
+}
+.header .desc p {
+	width: 200px;
+}
+
+.full-container{
+	max-width: 1170px;
+	margin: 0 auto;
+}
+.container-9{
+	max-width: 800px;
+	margin: 0 auto;
+}
+.container-9 .icon{
+	text-align: center;
+	width: 30%;
+}
+.container-9 .caption{
+	width: 70%;
+}
+.full-container .col-sm-12, .col-md-6, .col-sm-6, .col-md-3{
+	padding: 0px;
+}
+.full-container .thumbnail{
+	margin-bottom: 0px;
+
+}
+
+#user-list{
+	position: relative;
+}
+
+.user {
+	position: absolute;
+	top:0px;
+	left: 10px;
+	height: 200px;
+	width: 160px;
+	border: solid black 1px;
+	background: #eee;
+	transition: 2s;
+}
+
+.user.c{
+	position: fixed;
+	top: 30%;
+	left: 50%;
+}
+
+#user-list :nth-child(1){
+	top: 28%;
+	left: 48%;
+	z-index: -1;
+}
+
+#user-list  :nth-child(2){
+	top: 26%;
+	left: 46%;
+	z-index: -2;
+}
+#user-list :nth-child(3){
+	top: 24%;
+	left: 44%;
+	z-index: -3;
+}
+#user-list :nth-child(4){
+	top: 22%;
+	left: 42%;
+	z-index: -4;
+}
+#user-list :nth-child(5){
+	top: 20%;
+	left: 40%;
+	z-index: -5;
+}
+
+
+/*.user.c.rotate{
+	transform: rotate(360deg);
+	animation-name: card-rotate;
+  	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+*/
+
+
+.user img {	
+	margin-top: 10%;	
+	border: solid black 1px;
+}
+
+
+
+
+
+
+
+@keyframes card-rotate {
+	100% {
+		transform: rotate(360deg);
+	}
+}
